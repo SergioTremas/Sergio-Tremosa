@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+    <form>
+        <div class="col-6 m-5">
+            <div class="form-group">
+                <label for="EntradaCiudad" class="mt-3">Ciudad 1</label>
+                <input type="text" class="form-control mt-2" id="city1" placeholder="">
+                <label for="EntradaCiudad" class="mt-3">Ciudad 2</label>
+                <input type="text" class="form-control mt-2" id="city2" placeholder="">
+                <label for="EntradaCiudad" class="mt-3">Ciudad 3</label>
+
+                <input type="text" class="form-control mt-2" id="city3" placeholder="">
+                <label for="EntradaCiudad" class="mt-3">Ciudad 4</label>
+
+                <input type="text" class="form-control mt-2" id="city4" placeholder="">
+                <label for="EntradaCiudad" class="mt-3">Ciudad 5</label>
+
+                <input type="text" class="form-control mt-2" id="city5" placeholder="">
+                <label for="EntradaCiudad" class="mt-3">Ciudad 6</label>
+
+                <input type="text" class="form-control mt-2" id="city6" placeholder="">
+
+
+                <small id="cityHelp" class="form-text text-muted">Introduce aqui el nombre de las ciudades con las que quieres trabajar</small>
+            </div>
+
+
+            <button type="button" class="btn btn-primary" id="boton">Introducir</button>
+            <small id="error" style="display: none">No se puede validar la ciudad si tiene numeros </small>
+    </form>
+    </div>
+
+</body>
+<script>
+    var city1 = document.getElementById("city1");
+    var city2 = document.getElementById("city2");
+    var city3 = document.getElementById("city3");
+    var city4 = document.getElementById("city4");
+    var city5 = document.getElementById("city5");
+    var city6 = document.getElementById("city6");
+    var boton = document.getElementById("boton");
+    var error = document.getElementById("error");
+    var numeros = "0123456789";
+
+
+    boton.onclick = function() {
+
+        var city1Val = upperFirst(city1.value);
+        var city2Val = upperFirst(city2.value);
+        var city3Val = upperFirst(city3.value);
+        var city4Val = upperFirst(city4.value);
+        var city5Val = upperFirst(city5.value);
+        var city6Val = upperFirst(city6.value);
+
+        alert("Las ciudades introducidas son: \n" + city1Val + "\n" + city2Val + "\n" + city3Val + "\n" + city4Val + "\n" + city5Val + "\n" + city6Val);
+
+        cityA = arrayf(city1Val, city2Val, city3Val, city4Val, city5Val, city6Val);
+
+
+        four(cityA);
+
+        array = [city1Val, city2Val, city3Val, city4Val, city5Val, city6Val];
+
+        arrayChars(array);
+
+
+
+    }
+
+
+    city1.onkeyup = function() {
+        var cityVal = city1.value;
+        inputNumber(cityVal, city1);
+    }
+    city2.onkeyup = function() {
+        var cityVal = city2.value;
+        inputNumber(cityVal, city2);
+    }
+    city3.onkeyup = function() {
+        var cityVal = city3.value;
+        inputNumber(cityVal, city3);
+    }
+    city4.onkeyup = function() {
+        var cityVal = city4.value;
+        inputNumber(cityVal, city4);
+    }
+    city5.onkeyup = function() {
+        var cityVal = city5.value;
+        inputNumber(cityVal, city5);
+    }
+
+
+    city6.onkeyup = function() {
+        var cityVal = city6.value;
+        inputNumber(cityVal, city6);
+    }
+
+
+
+    function upperFirst(string) {
+        var arr = string.split("");
+        arr[0] = arr[0].toUpperCase();
+        var wordTit = "";
+        for (var i = 0; i < arr.length; i++) {
+
+            wordTit = wordTit + arr[i];
+
+        }
+
+        return wordTit;
+    }
+
+
+
+
+    function inputNumber(text, city) {
+        for (i = 0; i < text.length; i++) {
+            if (numeros.indexOf(text.charAt(i), 0) != -1) {
+                return invalidated(city);
+            }
+        }
+        return validate(city);
+    }
+
+
+
+    function arrayf(a, b, c, d, e, f) {
+
+        var cities = [a, b, c, d, e, f];
+
+        cities = cities.sort();
+
+        alert("Las ciudades ordenadas alfabéticamente son: \n" + cities[0] + "\n" + cities[1] + "\n" + cities[2] + "\n" + cities[3] + "\n" + cities[4] + "\n" + cities[5]);
+
+        return cities;
+    }
+
+
+
+
+    function four(cities) {
+
+        // var hola = "hola";
+
+        // hola = hola.replace("a", "4");
+        // alert(hola);
+
+        for (var i = 0; i < cities.length; i++) {
+
+            cities[i] = cities[i].replace(/["a"]/gi, "4");
+            cities[i] = cities[i].replace(/["A"]/gi, "4");
+        }
+
+        alert("Las ciudades con 4 en lugar de a son: \n" + cities[0] + "\n" + cities[1] + "\n" + cities[2] + "\n" + cities[3] + "\n" + cities[4] + "\n" + cities[5]);
+
+
+        return cities;
+
+    }
+
+
+
+    function invalidated(city) {
+
+        error.style.display = "block";
+
+        city.style.backgroundColor = "red";
+
+        boton.disabled = true;
+    }
+
+    function validate(city) {
+
+        error.style.display = "none";
+
+        city.style.backgroundColor = "white";
+
+        boton.disabled = false;
+    }
+
+
+
+    function arrayChars(array) {
+
+        var arrayD = [];
+
+        for (var i = 0; i < array.length; i++) {
+
+            arrayD[i] = array[i].split("");
+            arrayD[i].reverse();
+
+        }
+
+        for (var i = 0; i < arrayD.length; i++) {
+
+            var word = "";
+
+            for (var x = 0; x < arrayD[i].length; x++) {
+
+                word = word + arrayD[i][x];
+
+            }
+
+            arrayD[i] = word;
+
+
+        }
+
+        alert("Las ciudades invertidas son: \n" + arrayD[0] + "\n" + arrayD[1] + "\n" + arrayD[2] + "\n" + arrayD[3] + "\n" + arrayD[4] + "\n" + arrayD[5]);
+
+
+
+        return arrayD;
+
+
+    }
+</script>
+
+</html>

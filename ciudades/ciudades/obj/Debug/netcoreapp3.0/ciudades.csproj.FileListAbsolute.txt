@@ -1,0 +1,11 @@
+E:\BarcelonaActiva\.net\ciudades\ciudades\bin\Debug\netcoreapp3.0\ciudades.exe
+E:\BarcelonaActiva\.net\ciudades\ciudades\bin\Debug\netcoreapp3.0\ciudades.deps.json
+E:\BarcelonaActiva\.net\ciudades\ciudades\bin\Debug\netcoreapp3.0\ciudades.runtimeconfig.json
+E:\BarcelonaActiva\.net\ciudades\ciudades\bin\Debug\netcoreapp3.0\ciudades.runtimeconfig.dev.json
+E:\BarcelonaActiva\.net\ciudades\ciudades\bin\Debug\netcoreapp3.0\ciudades.dll
+E:\BarcelonaActiva\.net\ciudades\ciudades\bin\Debug\netcoreapp3.0\ciudades.pdb
+E:\BarcelonaActiva\.net\ciudades\ciudades\obj\Debug\netcoreapp3.0\ciudades.csprojAssemblyReference.cache
+E:\BarcelonaActiva\.net\ciudades\ciudades\obj\Debug\netcoreapp3.0\ciudades.AssemblyInfoInputs.cache
+E:\BarcelonaActiva\.net\ciudades\ciudades\obj\Debug\netcoreapp3.0\ciudades.AssemblyInfo.cs
+E:\BarcelonaActiva\.net\ciudades\ciudades\obj\Debug\netcoreapp3.0\ciudades.dll
+E:\BarcelonaActiva\.net\ciudades\ciudades\obj\Debug\netcoreapp3.0\ciudades.pdb
